@@ -1,0 +1,56 @@
+{
+    "Eye": [200, 200, 1000],
+    "Lights": [
+        {
+            "position": [-200, 600, 1500],
+            "color": [1.0, 1.0, 1.0]
+        }
+    ],
+    "Objects": [
+        {
+            "type": "triangle",
+            "comment": "Blue triangle",
+            "position1": [90, 340, 200],
+            "position2": [80, 300, 200],
+            "position3": [240, 250, 200],
+            "material":
+            {
+                "color": [0.0, 0.0, 1.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 64
+            }
+        },
+        {
+            "type": "triangle",
+            "comment": "Green triangle",
+            "position1": [210, 270, 100],
+            "position2": [190, 200, 100],
+            "position3": [250, 240, 100],
+            "material":
+            {
+                "color": [0.0, 1.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.3,
+                "ks": 0.5,
+                "n": 8
+            }
+        },
+        {
+            "type": "triangle",
+            "comment": "Red triangle",
+            "position1": [290, 170, 200],
+            "position2": [200, 160, 200],
+            "position3": [290, 160, 200],
+            "material":
+            {
+                "color": [1.0, 0.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.8,
+                "n": 32
+            }
+        }
+    ]
+}

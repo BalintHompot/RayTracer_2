@@ -1,0 +1,42 @@
+{
+    "Eye": [200, 200, 200],
+    "Lights": [
+        {
+            "position": [200, 600, 1300],
+            "color": [1.0, 1.0, 1.0]
+        }
+    ],
+    "Objects": [
+        {
+            "type": "triangle",
+            "comment": "Blue quad",
+            "position1": [50, 50, 50],
+            "position2": [100, 50, 50],
+            "position3": [75, 100, 50],
+            "material":
+            {
+                "color": [1.0, 0.0, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 64
+            }
+        },
+        {
+            "type": "triangle",
+            "comment": "Blue quad",
+            "position1": [50, 50, 50],
+            "position2": [100, 50, 50],
+            "position3": [67, 12, 77],
+            "material":
+            {
+                "color": [0.0, 0.0, 1.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 64
+            }
+        }
+
+    ]
+}

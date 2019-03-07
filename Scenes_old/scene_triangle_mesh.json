@@ -1,0 +1,46 @@
+{
+    "Eye": [200, 200, 200],
+    "Size": [400,600],
+    "Meshes": [
+            {
+                "name": "cube.obj"
+            }
+        ],    
+    "Lights": [
+        {
+            "position": [-200, 600, 1300],
+            "color": [1.0, 1.0, 1.0]
+        }
+    ],
+    "Objects": [
+        {
+            "type": "plane",
+            "comment": "Blue plane",
+            "position": [5, 5, 55],
+            "normal": [5, 0, 50],
+            "material":
+            {
+                "color": [0.0, 1, 0.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 64
+            }
+        },
+	{
+            "type": "triangle",
+            "comment": "Pink triangle with glare",
+            "position1": [150, 50, -20],
+            "position2": [350, 50, 20],
+            "position3": [250, 300, -50],
+            "material":
+            {
+                "color": [1.0, 0.0, 1.0],
+                "ka": 0.2,
+                "kd": 0.7,
+                "ks": 0.5,
+                "n": 64
+            }
+        }
+    ]
+}
