@@ -39,8 +39,22 @@ Hit Sphere::intersect(Ray const &ray)
     return Hit(t0, N);
 }
 
+float* Sphere::textureCoords(int x, int y){
+    float u = 0.5f + (atan2(position.y,position.x))/(2*M_PI);
+    float v = 1 - acos(position.z/r)/M_PI;
+    return new float[2]{u, v};
+}
+
 Sphere::Sphere(Point const &pos, double radius)
 :
     position(pos),
-    r(radius)
+    r(radius),
+    texture(nullptr)
+{}
+
+Sphere::Sphere(Point const &pos, double radius, Image tex)
+:
+    position(pos),
+    r(radius),
+    texture(&tex)
 {}

@@ -42,7 +42,17 @@ bool Raytracer::parseObjectNode(json const &node)
     {
         Point pos(node["position"]);
         double radius = node["radius"];
-        obj = ObjectPtr(new Sphere(pos, radius));
+
+        // Read texture if present
+        if (node.find("RelativeImagePath") != node.end()){
+            string path = node["RelativeImagePath"];
+            std::cout << "Texture stated to be at location: " << path << '\n';
+            obj = ObjectPtr(new Sphere(pos, radius, Image(path)));
+        } else {
+            // No texture present
+            obj = ObjectPtr(new Sphere(pos, radius));
+        }
+
     } else if (node["type"] == "triangle")
     {
         //cerr << "Object type: " << node["type"] << ".\n";

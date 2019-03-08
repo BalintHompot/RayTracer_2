@@ -7,7 +7,7 @@ using namespace std;
 Hit Quad::intersect(Ray const &ray)
 {
 
-    
+
     Triple centerTop = point1;
     double r = 20;
     double b = 2*(ray.O-centerTop).dot(ray.D);
@@ -37,6 +37,10 @@ Hit Quad::intersect(Ray const &ray)
 
 
     return Hit(t,N);
+}
+
+float *Quad::textureCoords(int x, int y){
+    return NULL ;
 }
 
 Quad::Quad(Point const &p1, Point const &p2,Point const &p3,Point const &p4)

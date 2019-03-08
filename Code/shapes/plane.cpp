@@ -19,6 +19,10 @@ Hit Plane::intersect(Ray const &ray)
     return Hit(t, N);
 }
 
+float *Plane::textureCoords(int x, int y){
+    return NULL ;
+}
+
 Plane::Plane(Point const &pt, Point const &n)
 :
     point(pt),

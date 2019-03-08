@@ -21,6 +21,8 @@ class Object
 
         virtual Hit intersect(Ray const &ray) = 0;  // must be implemented
                                                     // in derived class
+
+        virtual float *textureCoords(int x, int y) = 0;
 };
 
 #endif

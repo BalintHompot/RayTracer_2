@@ -9,6 +9,7 @@ class Plane: public Object
         Plane(Point const &pt, Point const &n);
 
         virtual Hit intersect(Ray const &ray);
+        virtual float *textureCoords(int x, int y);
 
         /* YOUR DATA MEMBERS HERE*/
         Point const point;

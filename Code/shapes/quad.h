@@ -9,6 +9,7 @@ class Quad: public Object
         Quad(Point const &p1, Point const &p2,Point const &p3,Point const &p4);
 
         virtual Hit intersect(Ray const &ray);
+        virtual float *textureCoords(int x, int y);
 
         Point const point1;
         Point const point2;

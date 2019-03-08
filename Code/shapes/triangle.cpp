@@ -37,6 +37,10 @@ Hit Triangle::intersect(Ray const &ray)
     return Hit(t, normal);
 }
 
+float* Triangle::textureCoords(int x, int y){
+    return NULL;
+}
+
 Triangle::Triangle(Point const &v0,
          Point const &v1,
          Point const &v2)
