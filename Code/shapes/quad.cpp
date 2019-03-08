@@ -39,8 +39,16 @@ Hit Quad::intersect(Ray const &ray)
     return Hit(t,N);
 }
 
-float *Quad::textureCoords(int x, int y){
+float *Quad::textureCoords(float x, float y, float z){
     return NULL ;
+}
+
+bool Quad::hasTexture(){
+    return texture != nullptr;
+}
+
+Image Quad::getTexture(){
+    return *texture;
 }
 
 Quad::Quad(Point const &p1, Point const &p2,Point const &p3,Point const &p4)
@@ -48,6 +56,6 @@ Quad::Quad(Point const &p1, Point const &p2,Point const &p3,Point const &p4)
     point1(point1),
     point2(point2),
     point3(point3),
-    point4(point4)
-
+    point4(point4),
+    texture(nullptr)
 {}

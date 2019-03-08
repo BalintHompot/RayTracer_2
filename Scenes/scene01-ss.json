@@ -55,7 +55,7 @@
             "comment": "Yellow sphere",
             "position": [140, 220, 400],
             "radius": 50,
-            "RelativeImagePath": "../Scenes/scene01-ss/earthmap1k.png",
+            "RelativeImagePath": "../Scenes/earthmap1k.png",
             "material":
             {
                 "color": [1.0, 0.8, 0.0],

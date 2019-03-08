@@ -2,6 +2,7 @@
 #define TRIANGLE_H_
 
 #include "../object.h"
+#include "../image.h"
 
 class Triangle: public Object
 {
@@ -11,12 +12,15 @@ class Triangle: public Object
                  Point const &v2);
 
         virtual Hit intersect(Ray const &ray);
-        virtual float* textureCoords(int x, int y);
+        virtual float* textureCoords(float x, float y, float z);
+        virtual bool hasTexture();
+        virtual Image getTexture();
 
         Point v0;
         Point v1;
         Point v2;
         Vector N;
+        Image *texture;
 };
 
 #endif

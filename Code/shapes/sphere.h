@@ -12,7 +12,11 @@ class Sphere: public Object
 
         virtual Hit intersect(Ray const &ray);
 
-        virtual float* textureCoords(int x, int y);
+        virtual float* textureCoords(float x, float y, float z);
+
+        virtual bool hasTexture();
+
+        virtual Image getTexture();
 
         Point const position;
         double const r;

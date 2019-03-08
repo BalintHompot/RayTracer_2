@@ -36,6 +36,25 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
     Vector N = min_hit.N;                          //the normal at hit point
     Vector V = -ray.D;                             //the view vector
 
+   /* if (obj->hasTexture()){
+        // Texture found
+
+        // Compute uv-coordinates from hit-point (only non-trivially implemented for sphere currently)
+        float *uv = obj->textureCoords(hit.x, hit.y, hit.z);
+        //std::cout << "uv-coords: " << uv[0] << ", " << uv[1] << "\t"; // print for debugging
+
+        try {
+            // Load texture from object (only non-trivially implemented for sphere currently)
+            Image img = obj->getTexture();
+
+            // Put texture color into material color
+            material.color = img.colorAt(uv[0], uv[1]);
+
+        } catch (const std::exception &exc) {
+            cerr << "Something went wrong when aplying texture in scene.cpp: " << exc.what() << "\n";
+        }
+    }*/
+
 
     /****************************************************
     * This is where you should insert the color

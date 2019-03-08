@@ -2,6 +2,8 @@
 #include "solvers.h"
 
 #include <cmath>
+#include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -39,10 +41,30 @@ Hit Sphere::intersect(Ray const &ray)
     return Hit(t0, N);
 }
 
-float* Sphere::textureCoords(int x, int y){
-    float u = 0.5f + (atan2(position.y,position.x))/(2*M_PI);
-    float v = 1 - acos(position.z/r)/M_PI;
+float* Sphere::textureCoords(float x, float y, float z){ // Return uv-coords, given (x,y,z)-hit-point coordinates
+    float rad;
+    if (r == 0){ // Avoid 0-division
+        rad = 0.00001f;
+    } else {
+        rad = r;
+    }
+
+    float u = 0.5f + (atan2(y,x))/(2*M_PI);
+    float v = 1.0f - acos(((float)z/(float)rad))/(float)M_PI;
+
+    //float *arr = new float[2];
+    //arr[0] = u;
+    //arr[1] = v;
+    //return arr;
     return new float[2]{u, v};
+}
+
+bool Sphere::hasTexture(){
+    return texture != nullptr;
+}
+
+Image Sphere::getTexture(){
+    return *texture;
 }
 
 Sphere::Sphere(Point const &pos, double radius)

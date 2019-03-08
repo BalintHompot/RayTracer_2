@@ -37,8 +37,16 @@ Hit Triangle::intersect(Ray const &ray)
     return Hit(t, normal);
 }
 
-float* Triangle::textureCoords(int x, int y){
+float* Triangle::textureCoords(float x, float y, float z){
     return NULL;
+}
+
+bool Triangle::hasTexture(){
+    return texture != nullptr;
+}
+
+Image Triangle::getTexture(){
+    return *texture;
 }
 
 Triangle::Triangle(Point const &v0,
@@ -48,7 +56,8 @@ Triangle::Triangle(Point const &v0,
     v0(v0),
     v1(v1),
     v2(v2),
-    N()
+    N(),
+    texture(nullptr)
 {
     // Calculate surface normal
     Vector U(v1 - v0);

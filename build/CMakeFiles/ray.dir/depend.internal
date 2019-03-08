@@ -12,6 +12,7 @@ CMakeFiles/ray.dir/Code/lode/lodepng.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/lode/lodepng.h
 CMakeFiles/ray.dir/Code/main.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/hit.h
+ /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/json/json_fwd.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/light.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/main.cpp
@@ -67,6 +68,7 @@ CMakeFiles/ray.dir/Code/scene.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/vertex.h
 CMakeFiles/ray.dir/Code/shapes/example.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/hit.h
+ /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/json/json_fwd.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/material.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h
@@ -76,6 +78,7 @@ CMakeFiles/ray.dir/Code/shapes/example.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/triple.h
 CMakeFiles/ray.dir/Code/shapes/plane.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/hit.h
+ /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/json/json_fwd.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/material.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h
@@ -85,6 +88,7 @@ CMakeFiles/ray.dir/Code/shapes/plane.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/triple.h
 CMakeFiles/ray.dir/Code/shapes/quad.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/hit.h
+ /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/json/json_fwd.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/material.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h
@@ -108,6 +112,7 @@ CMakeFiles/ray.dir/Code/shapes/sphere.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/triple.h
 CMakeFiles/ray.dir/Code/shapes/triangle.cpp.o
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/hit.h
+ /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/json/json_fwd.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/material.h
  /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h

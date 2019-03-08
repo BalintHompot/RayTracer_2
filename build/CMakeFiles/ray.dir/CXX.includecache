@@ -361,6 +361,8 @@ vector
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h
 material.h
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/material.h
+image.h
+/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
 hit.h
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/hit.h
 ray.h
@@ -491,6 +493,8 @@ cmath
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/plane.h
 ../object.h
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h
+../image.h
+/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
 
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/quad.cpp
 quad.h
@@ -501,6 +505,8 @@ cmath
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/quad.h
 ../object.h
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h
+../image.h
+/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
 
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/solvers.cpp
 solvers.h
@@ -518,6 +524,10 @@ sphere.h
 solvers.h
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/solvers.h
 cmath
+-
+iostream
+-
+math.h
 -
 
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/sphere.h
@@ -537,6 +547,8 @@ cmath
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/triangle.h
 ../object.h
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/object.h
+../image.h
+/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.h
 
 /home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/triple.cpp
 triple.h
