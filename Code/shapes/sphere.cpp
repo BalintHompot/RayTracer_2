@@ -12,10 +12,15 @@ Hit Sphere::intersect(Ray const &ray)
     // Sphere formula: ||x - position||^2 = r^2
     // Line formula:   x = ray.O + t * ray.D
 
+   
     Vector L = ray.O - position;
+
+
     double a = ray.D.dot(ray.D);
     double b = 2 * ray.D.dot(L);
     double c = L.dot(L) - r * r;
+
+    
 
     double t0;
     double t1;
@@ -32,6 +37,7 @@ Hit Sphere::intersect(Ray const &ray)
 
     // calculate normal
     Point hit = ray.at(t0);
+
     Vector N = (hit - position).normalized();
 
     // determine orientation of the normal
