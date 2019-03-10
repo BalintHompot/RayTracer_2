@@ -12,7 +12,7 @@ class Triangle: public Object
                  Point const &v2);
 
         virtual Hit intersect(Ray const &ray);
-        virtual float* textureCoords(float x, float y, float z);
+        virtual float* textureCoords(Point hit);
         virtual bool hasTexture();
         virtual Image getTexture();
 

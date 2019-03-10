@@ -79,6 +79,7 @@ void Image::write_png(std::string const &filename) const
 
 void Image::read_png(std::string const &filename)
 {
+    cout << "Start reading in: " << filename << "\n";
     vector<unsigned char> image;
     lodepng::decode(image, d_width, d_height, filename);
     d_pixels.reserve(size());
@@ -96,4 +97,5 @@ void Image::read_png(std::string const &filename)
         ++imgIter;
         d_pixels.push_back(Color(r, g, b));
     }
+    cout << "Done reading in. Vector size: " << image.size() << "\n";
 }

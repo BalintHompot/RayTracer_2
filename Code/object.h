@@ -23,7 +23,7 @@ class Object
         virtual Hit intersect(Ray const &ray) = 0;  // must be implemented
                                                     // in derived class
 
-        virtual float *textureCoords(float x, float y, float z) = 0;
+        virtual float *textureCoords(Point hit) = 0;
         virtual bool hasTexture() = 0;
         virtual Image getTexture() = 0;
 

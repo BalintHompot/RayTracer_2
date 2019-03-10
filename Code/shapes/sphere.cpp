@@ -47,42 +47,41 @@ Hit Sphere::intersect(Ray const &ray)
     return Hit(t0, N);
 }
 
-float* Sphere::textureCoords(float x, float y, float z){ // Return uv-coords, given (x,y,z)-hit-point coordinates
-    float rad;
-    if (r == 0){ // Avoid 0-division
-        rad = 0.00001f;
-    } else {
-        rad = r;
-    }
+float* Sphere::textureCoords(Point hit){ // Return uv-coords, given (x,y,z)-hit-point coordinates
 
-    float u = 0.5f + (atan2(y,x))/(2*M_PI);
-    float v = 1.0f - acos(((float)z/(float)rad))/(float)M_PI;
+    Point diff = hit - position;
+    float theta = acos(diff.z/r);
+    float phi = atan2(diff.y, diff.x);
+    phi = phi >= 0 ? phi : phi + 2*M_PI;
+    //float u = 0.5f + phi/2*M_PI;
+    //float v = (M_PI - theta)/M_PI;
 
-    //float *arr = new float[2];
-    //arr[0] = u;
-    //arr[1] = v;
-    //return arr;
-    return new float[2]{u, v};
+
+    double u = 0.5 + phi/(2*M_PI);
+    double v = 1.0 - theta/M_PI;
+
+    return new float[2]{(float)u, (float)v};
 }
 
 bool Sphere::hasTexture(){
-    return texture != nullptr;
+    return texturePresent;
 }
 
 Image Sphere::getTexture(){
-    return *texture;
+    return texture;
 }
 
 Sphere::Sphere(Point const &pos, double radius)
 :
     position(pos),
     r(radius),
-    texture(nullptr)
+    texturePresent(false)
 {}
 
 Sphere::Sphere(Point const &pos, double radius, Image tex)
 :
     position(pos),
     r(radius),
-    texture(&tex)
+    texture(tex),
+    texturePresent(true)
 {}

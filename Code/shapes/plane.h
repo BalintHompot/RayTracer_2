@@ -10,7 +10,7 @@ class Plane: public Object
         Plane(Point const &pt, Point const &n);
 
         virtual Hit intersect(Ray const &ray);
-        virtual float *textureCoords(float x, float y, float z);
+        virtual float *textureCoords(Point hit);
         virtual bool hasTexture();
         virtual Image getTexture();
 

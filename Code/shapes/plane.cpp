@@ -19,7 +19,7 @@ Hit Plane::intersect(Ray const &ray)
     return Hit(t, N);
 }
 
-float *Plane::textureCoords(float x, float y, float z){
+float *Plane::textureCoords(Point hit){
     return NULL ;
 }
 

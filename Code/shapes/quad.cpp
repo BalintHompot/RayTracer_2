@@ -39,7 +39,7 @@ Hit Quad::intersect(Ray const &ray)
     return Hit(t,N);
 }
 
-float *Quad::textureCoords(float x, float y, float z){
+float *Quad::textureCoords(Point hit){
     return NULL ;
 }
 
