@@ -37,8 +37,9 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
     Vector V = -ray.D;                             //the view vector
 
 
-   if (obj->hasTexture()){
+    if (material.hasTexture){
         // Texture found
+        // Perform rotation on texture
         /// rotation formula (Rodrigues)
         /// 
         /// transform the hit coordinates to get rotated texture position
@@ -51,19 +52,12 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
         Vector originalHit = hit;
         hit = hit.operator*(cos(rotationAngle)) + (axis.cross(hit)).operator*(sin(rotationAngle)) + (axis.operator*(axis.dot(hit))).operator*(1-cos(rotationAngle));
         hit.operator+=(centerAxis);
+
+        // Get texture color
         // Compute uv-coordinates from hit-point (only non-trivially implemented for sphere currently)
         float *uv = obj->textureCoords(hit);
-
-        try {
-            // Load texture from object (only non-trivially implemented for sphere currently)
-            Image img = obj->getTexture();
-
-            // Put texture color into material color
-            material.color = img.colorAt(uv[0], uv[1]);
-
-        } catch (const std::exception &exc) {
-            cerr << "Something went wrong when aplying texture in scene.cpp: " << exc.what() << "\n";
-        }
+        // Put texture color into material color
+        material.color = material.texture.colorAt(uv[0], uv[1]);
 
         hit = originalHit;
     }
@@ -134,6 +128,7 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
 
 
     }
+
     // Specular reflection
 
     Vector L = -ray.D; // Calculate L

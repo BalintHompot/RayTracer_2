@@ -12,7 +12,7 @@ Hit Sphere::intersect(Ray const &ray)
     // Sphere formula: ||x - position||^2 = r^2
     // Line formula:   x = ray.O + t * ray.D
 
-   
+
     Vector L = ray.O - position;
 
 
@@ -20,7 +20,7 @@ Hit Sphere::intersect(Ray const &ray)
     double b = 2 * ray.D.dot(L);
     double c = L.dot(L) - r * r;
 
-    
+
 
     double t0;
     double t1;
@@ -47,15 +47,12 @@ Hit Sphere::intersect(Ray const &ray)
     return Hit(t0, N);
 }
 
-float* Sphere::textureCoords(Point hit){ // Return uv-coords, given (x,y,z)-hit-point coordinates
+float* Sphere::textureCoords(Point hit){ // Return uv-coords for sphere shape, given (x,y,z)-hit-point coordinates
 
     Point diff = hit - position;
     float theta = acos(diff.z/r);
     float phi = atan2(diff.y, diff.x);
     phi = phi >= 0 ? phi : phi + 2*M_PI;
-    //float u = 0.5f + phi/2*M_PI;
-    //float v = (M_PI - theta)/M_PI;
-
 
     double u = 0.5 + phi/(2*M_PI);
     double v = 1.0 - theta/M_PI;
@@ -63,13 +60,6 @@ float* Sphere::textureCoords(Point hit){ // Return uv-coords, given (x,y,z)-hit-
     return new float[2]{(float)u, (float)v};
 }
 
-bool Sphere::hasTexture(){
-    return texturePresent;
-}
-
-Image Sphere::getTexture(){
-    return texture;
-}
 double Sphere::getRotationAngle(){
     return rotationAngle;
 }
@@ -84,17 +74,6 @@ Sphere::Sphere(Point const &pos, double radius, double rotAngle, Vector rotAxis)
 :
     position(pos),
     r(radius),
-    texturePresent(false),
-    rotationAngle(rotAngle),
-    rotationAxis(rotAxis)
-{}
-
-Sphere::Sphere(Point const &pos, double radius, Image tex, double rotAngle, Vector rotAxis)
-:
-    position(pos),
-    r(radius),
-    texture(tex),
-    texturePresent(true),
     rotationAngle(rotAngle),
     rotationAxis(rotAxis)
 {}

@@ -15,7 +15,6 @@ Hit Plane::intersect(Ray const &ray)
         return Hit::NO_HIT();
 
     double t = (numerator/denumerator);
-    //t = (t > 0 ? t : -t);
     return Hit(t, N);
 }
 
@@ -23,13 +22,6 @@ float *Plane::textureCoords(Point hit){
     return NULL ;
 }
 
-bool Plane::hasTexture(){
-    return texture != nullptr;
-}
-
-Image Plane::getTexture(){
-    return *texture;
-}
 double Plane::getRotationAngle(){
     return 0.0;
 }
@@ -43,6 +35,5 @@ Vector Plane::getRotationAxis(){
 Plane::Plane(Point const &pt, Point const &n)
 :
     point(pt),
-    N(n),
-    texture(nullptr)
+    N(n)
 {}

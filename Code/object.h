@@ -23,8 +23,6 @@ class Object
                                                     // in derived class
 
         virtual float *textureCoords(Point hit) = 0;
-        virtual bool hasTexture() = 0;
-        virtual Image getTexture() = 0;
         virtual double getRotationAngle() = 0;
         virtual Point getPosition() = 0;
         virtual Vector getRotationAxis() = 0;

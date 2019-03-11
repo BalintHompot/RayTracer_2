@@ -13,8 +13,6 @@ class Triangle: public Object
 
         virtual Hit intersect(Ray const &ray);
         virtual float* textureCoords(Point hit);
-        virtual bool hasTexture();
-        virtual Image getTexture();
         virtual double getRotationAngle();
         virtual Point getPosition();
         virtual Vector getRotationAxis();
@@ -23,7 +21,6 @@ class Triangle: public Object
         Point v1;
         Point v2;
         Vector N;
-        Image *texture;
 };
 
 #endif

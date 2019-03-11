@@ -11,8 +11,6 @@ class Plane: public Object
 
         virtual Hit intersect(Ray const &ray);
         virtual float *textureCoords(Point hit);
-        virtual bool hasTexture();
-        virtual Image getTexture();
         virtual double getRotationAngle();
         virtual Point getPosition();
         virtual Vector getRotationAxis();
@@ -20,7 +18,6 @@ class Plane: public Object
         /* YOUR DATA MEMBERS HERE*/
         Point const point;
         Vector const N;
-        Image *texture;
 };
 
 #endif

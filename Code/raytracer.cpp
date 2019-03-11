@@ -61,16 +61,7 @@ bool Raytracer::parseObjectNode(json const &node)
             rotationAngle = node["angle"];
         }
 
-        if (node.find("RelativeImagePath") != node.end()){
-            string path = node["RelativeImagePath"];
-            std::cout << "Texture stated to be at location: " << path << '\n';
-            obj = ObjectPtr(new Sphere(pos, radius, Image(path), rotationAngle, rotationAxis));
-        } else {
-            // No texture present
-            obj = ObjectPtr(new Sphere(pos, radius, rotationAngle, rotationAxis));
-        }
-
-
+        obj = ObjectPtr(new Sphere(pos, radius, rotationAngle, rotationAxis));
 
     } else if (node["type"] == "triangle")
     {
@@ -125,12 +116,23 @@ Light Raytracer::parseLightNode(json const &node) const
 
 Material Raytracer::parseMaterialNode(json const &node) const
 {
-    Color color(node["color"]);
-    double ka = node["ka"];
-    double kd = node["kd"];
-    double ks = node["ks"];
-    double n  = node["n"];
-    return Material(color, ka, kd, ks, n);
+    if (node.find("texture") != node.end()){ // Texture present instead of color
+        string file = node["texture"];
+        Image img("../Scenes/" + file);
+        double ka = node["ka"];
+        double kd = node["kd"];
+        double ks = node["ks"];
+        double n  = node["n"];
+        return Material(img, ka, kd, ks, n);
+    } else { // Color present instead of texture
+       Color color(node["color"]);
+       double ka = node["ka"];
+       double kd = node["kd"];
+       double ks = node["ks"];
+       double n  = node["n"];
+       return Material(color, ka, kd, ks, n);
+    }
+
 }
 
 bool Raytracer::readScene(string const &ifname)
@@ -151,12 +153,12 @@ try
 
     // Reading in the output image size if specified in json-file
     try {
-        cout << "Parsed size? " << jsonscene["Size"] <<"\n";
         int sizes[2] = {jsonscene["Size"][0],jsonscene["Size"][1]};
         width = sizes[0];
         height = sizes[1];
+        cout << "Parsed size: " << jsonscene["Size"] <<"\n";
     } catch (const std::exception &exc) {
-        cerr << "Something went wrong: " << exc.what() << "\n";
+        cerr << "No output-image-size detected.\n";
     }
 
     try{
@@ -202,7 +204,7 @@ try
             }
         }
     } catch (const std::exception &exc) {
-        cerr << "Something went wrong: " << exc.what() << "\n";
+        cerr << "No mesh detected.\n";
     }
 
     for (auto const &lightNode : jsonscene["Lights"])
