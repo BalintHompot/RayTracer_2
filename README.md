@@ -1,31 +1,32 @@
 # Raytracer C++ framework for Introduction to Computer Graphics
 
-## Modifications for the Raytracer Assignment 1
+## Modifications for the Raytracer Assignment 2
 
-### Spheres
-For the spheres we had to implement the intersection and the normal calculation. To calculate the intersection we made the formula for the sphere equal to the formula of the ray, reduce the equation to a quadratic formula of the distance, and solve the quadratic. The intersection to be returned is the minimum of the two roots (or the one if there is one, or nothing if there is none).
-The Normal is easy from this step, we take the difference of the intersection and the center and normalize it.
+### Optical laws
 
-### Phong illumination
-To calculate the Phong illumination, we followed the formulas on the slides. For each light source, we calculate separately the ambient, the diffuse and the specular components. The material properties are given in the scene, the normal for specular is returned from the shape's intersect method (see above for sphere). The three components are summed for the full return value.
+#### Shadows
 
-### Triangles
-For the triangles we implemented the Möller–Trumbore intersection algorithm, following this site:
-https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle/ray-triangle-intersection-geometric-solution
-This algorithm calculates the intersection point and the norm similarly to a plane, and after that checks if the triangle is in front of the ray (so it should be visible), and if the intersection of the ray and the triangle's plane is within the boundaries defined by the edges of the triangle (in which case we actually should return a hit).
-Rendering triangles is functional, but the positions are somehow off, even if we define two vertices to be the same and the triangles only differ in one vertex, the same points do not render to the same position. We could not find out why this happens.
-### Planes
-Planes are defined by a point and a Normal. The intersection calculation was adapted from https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-plane-and-ray-disk-intersection .
+#### Multiple light sources
+This part was already implemented in the previous version. Since the scene can contain multiple light sources, we only had iterate over the light sources in the trace function when calculating the shading (instead of fixing the calculation to the first light source).
 
-### Quads
-Our implementation of the quad is just taking 4 points, and render 4 trinagles to obtain a tetrahedron-like object (it was not entirely clear what a quad is, but if it is just 4 points in some way, we can simply only render 2 triangles and get a rendered 4 points). Unfortunately, since the triangles render into unexpected positions, the edges of these triangles won't meet, so we won't get a correct quad, although it is just the problem mentioned in the triangles section. 
+#### Reflections
 
-### Scene and Object loading
-Scene-files may now contain both a size-specification for the output image (width*height-format) and one or multiple file names of meshes (e.g. "cube.obj") for meshes which are located in the Scenes-folder. Only the file name has to be provided for a mesh-object and the rest of the relative path to the object will be considered automatically. Also, if no size-specification is given in a scene-file, then the default output-image-size is going to be 400*400 pixels. 
+### Anti-aliasing
+Anti-aliasing is implemented inside the scene.render function. Originally it was looping over the pixels and shot a ray for each. We implemented an inner loop that shoots a number of rays from each pixel, with the starting position evenly distributed for the rays among the pixel, and average out the results of these rays. The number of rays is taken from the scene json file and stored in the scene object as raysPerPixel.
 
-Objects are now read in by the OBJLoader class and the vertices present in such a file are automatically converted to a set of all possible triangles that can be created from the set of vertices. This set of triangles gets then attached to the scene to be rendered as usual triangles. In spite of starting implementing a mesh-object-infrastructure in the code which would treat each mesh as a separate object, time didn't allow finalizing this approach. Since this functionality may be useful for the future, though, it was decided to keep the efforts made for implementing meshes as objects predent in the code (in order to continue on that approach later). It needs to be said that while loading and processing mesh-data works (as was tested by including print-statements which are disabled in the submission), the final rendering of meshes gives unexpected results, where the mesh does not look as expected, but has weird shates. We attribute this to the potetial error when rendering triangles (as indicated above).
+### Texturing
+#### Adding texture
 
-Also, unitization for meshes was implemented. First, a mesh gets scaled down to fit into a unit cube and afterwards its center gets translated to the origin of the graph. Since the output image only starts at the origin, and hence to put an object fully into the visual scene, afterwards, the objects gets translated again such that it has only positive coordinates anymore and afterwards, it gets scaled by factor 60 to make it better visible again (after unitization). For simplicity, we decided to put all this functionality into the unitization function. 
+#### Rotation
+The rotation is implemented using the Rodrigues rotation formula:
+
+v_rotated = v.operator*(cos(rotationAngle)) + (axis.cross(v)).operator*(sin(rotationAngle)) + (axis.operator*(axis.dot(v))).operator*(1-cos(rotationAngle));
+
+Where v is the original point, rotationAngle is the angle with which we rotate and axis is a unit vector starting from the origin, which defines the axis of rotation. 
+
+The rotation happens inside the trace function, and only started when there is texture. What we do essentially is that when a hot point is found, and we have texture, before retrieveng the coordinates on the texture that correspond to the hit, we rotate the hit point, and retrieve the texture for the rotated point (so we basically rotate the texture on the object). Since the Rodrigues formula rotates about the origin, first we need to move the center of the sphere to the origin, perform the rotation and then move it back.
+
+The parameters are taken from the scene json file for each object separately (if it is not specified, they are set to 0), and accessed in the trace function through the object. For this purpose, the object object had to be extended with a getPosition (for accessing the center of the sphere), getRotationAxis and getRotationAngle functions. Note that the rotation axis is stored in the object as it is in the json, and only gets normalized when tracing, and also the rotation angle is stored in degrees, as it is in the json, and only gets converted when tracing.
 
 
 ## Original Readme

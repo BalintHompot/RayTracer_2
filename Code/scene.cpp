@@ -141,7 +141,7 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
 
     Point above_hit_position = hit + R * 0.01; // Move hit point a bit further in refelctance direction
 
-    ///color += trace(Ray(above_hit_position, R), rec_depth-1) * material.ks;
+    color += trace(Ray(above_hit_position, R), rec_depth-1) * material.ks;
 
     return color;
 }
