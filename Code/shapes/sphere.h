@@ -15,21 +15,15 @@ class Sphere: public Object
 
         virtual float* textureCoords(Point hit);
 
-        virtual bool hasTexture();
-
-        virtual Image getTexture();
-
-        Point const position;
-        double const r;
-        Image texture;
-        bool texturePresent;
-
-        Vector rotationAxis;
-        double rotationAngle;
-
         virtual double getRotationAngle();
         virtual Point getPosition();
         virtual Vector getRotationAxis();
+
+        Point const position;
+        double const r;
+
+        Vector rotationAxis;
+        double rotationAngle;
 };
 
 #endif

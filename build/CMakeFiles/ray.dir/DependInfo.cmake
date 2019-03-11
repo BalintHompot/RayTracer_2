@@ -4,22 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/image.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/image.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/lode/lodepng.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/lode/lodepng.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/main.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/main.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/mesh.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/mesh.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/objloader.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/objloader.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/raytracer.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/raytracer.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/scene.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/scene.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/shapes/example.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/example.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/shapes/plane.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/plane.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/shapes/quad.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/quad.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/shapes/solvers.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/solvers.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/shapes/sphere.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/sphere.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/shapes/triangle.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/triangle.cpp.o"
-  "/Users/balinthompot/RUG/3C/CG/RayTracer_2/Code/triple.cpp" "/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir/Code/triple.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/image.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/image.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/lode/lodepng.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/lode/lodepng.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/main.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/main.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/mesh.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/mesh.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/objloader.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/objloader.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/raytracer.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/raytracer.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/scene.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/scene.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/example.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/example.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/plane.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/plane.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/quad.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/quad.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/solvers.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/solvers.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/sphere.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/sphere.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/shapes/triangle.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/shapes/triangle.cpp.o"
+  "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/Code/triple.cpp" "/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir/Code/triple.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

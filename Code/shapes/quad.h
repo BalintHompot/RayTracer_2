@@ -11,8 +11,6 @@ class Quad: public Object
 
         virtual Hit intersect(Ray const &ray);
         virtual float *textureCoords(Point hit);
-        virtual bool hasTexture();
-        virtual Image getTexture();
         virtual double getRotationAngle();
         virtual Point getPosition();
         virtual Vector getRotationAxis();
@@ -21,7 +19,6 @@ class Quad: public Object
         Point const point2;
         Point const point3;
         Point const point4;
-        Image *texture;
 
 };
 

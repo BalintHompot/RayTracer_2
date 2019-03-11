@@ -41,14 +41,6 @@ float* Triangle::textureCoords(Point hit){
     return NULL;
 }
 
-bool Triangle::hasTexture(){
-    return texture != nullptr;
-}
-
-Image Triangle::getTexture(){
-    return *texture;
-}
-
 double Triangle::getRotationAngle(){
     return 0.0;
 }
@@ -66,8 +58,7 @@ Triangle::Triangle(Point const &v0,
     v0(v0),
     v1(v1),
     v2(v2),
-    N(),
-    texture(nullptr)
+    N()
 {
     // Calculate surface normal
     Vector U(v1 - v0);

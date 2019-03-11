@@ -43,13 +43,6 @@ float *Quad::textureCoords(Point hit){
     return NULL ;
 }
 
-bool Quad::hasTexture(){
-    return texture != nullptr;
-}
-
-Image Quad::getTexture(){
-    return *texture;
-}
 double Quad::getRotationAngle(){
     return 0.0;
 }
@@ -60,11 +53,10 @@ Vector Quad::getRotationAxis(){
     return Vector(0,0,0);
 }
 
-Quad::Quad(Point const &p1, Point const &p2,Point const &p3,Point const &p4)
+Quad::Quad(Point const &p1, Point const &p2, Point const &p3, Point const &p4)
 :
-    point1(point1),
-    point2(point2),
-    point3(point3),
-    point4(point4),
-    texture(nullptr)
+    point1(p1),
+    point2(p2),
+    point3(p3),
+    point4(p4)
 {}
