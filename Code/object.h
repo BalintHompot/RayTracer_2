@@ -17,7 +17,6 @@ class Object
 {
     public:
         Material material;
-
         virtual ~Object() = default;
 
         virtual Hit intersect(Ray const &ray) = 0;  // must be implemented
@@ -26,6 +25,9 @@ class Object
         virtual float *textureCoords(Point hit) = 0;
         virtual bool hasTexture() = 0;
         virtual Image getTexture() = 0;
+        virtual double getRotationAngle() = 0;
+        virtual Point getPosition() = 0;
+        virtual Vector getRotationAxis() = 0;
 
 };
 

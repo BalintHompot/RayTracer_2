@@ -1,0 +1,28 @@
+{
+    "Eye": [200, 200, 1000],
+    "SuperSamplingFactor": 4,
+    "Lights": [
+        {
+            "position": [-200, 600, 1500],
+            "color": [1.0, 1.0, 1.0]
+        }
+    ],
+    "Objects": [
+
+        {
+            "type": "sphere",
+            "comment": "Yellow sphere",
+            "position": [140, 220, 400],
+            "radius": 50,
+            "RelativeImagePath": "../Scenes/earthmap1k.png",
+            "material":
+            {
+                "color": [1.0, 0.8, 0.0],
+                "ka": 0.2,
+                "kd": 0.8,
+                "ks": 0.0,
+                "n": 1
+            }
+        }
+    ]
+}

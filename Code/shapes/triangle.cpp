@@ -49,6 +49,16 @@ Image Triangle::getTexture(){
     return *texture;
 }
 
+double Triangle::getRotationAngle(){
+    return 0.0;
+}
+Point Triangle::getPosition(){
+    return Point(0,0,0);
+}
+Vector Triangle::getRotationAxis(){
+    return Vector(0,0,0);
+}
+
 Triangle::Triangle(Point const &v0,
          Point const &v1,
          Point const &v2)

@@ -15,6 +15,9 @@ class Triangle: public Object
         virtual float* textureCoords(Point hit);
         virtual bool hasTexture();
         virtual Image getTexture();
+        virtual double getRotationAngle();
+        virtual Point getPosition();
+        virtual Vector getRotationAxis();
 
         Point v0;
         Point v1;

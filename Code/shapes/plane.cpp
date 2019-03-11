@@ -30,6 +30,15 @@ bool Plane::hasTexture(){
 Image Plane::getTexture(){
     return *texture;
 }
+double Plane::getRotationAngle(){
+    return 0.0;
+}
+Point Plane::getPosition(){
+    return Point(0,0,0);
+}
+Vector Plane::getRotationAxis(){
+    return Vector(0,0,0);
+}
 
 Plane::Plane(Point const &pt, Point const &n)
 :

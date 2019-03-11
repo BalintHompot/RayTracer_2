@@ -7,8 +7,9 @@
 class Sphere: public Object
 {
     public:
-        Sphere(Point const &pos, double radius);
-        Sphere(Point const &pos, double radius, Image tex);
+        Sphere(Point const &pos, double radius, double rotAngle, Vector rotAxis);
+        Sphere(Point const &pos, double radius, Image tex, double rotAngle, Vector rotAxis);
+
 
         virtual Hit intersect(Ray const &ray);
 
@@ -22,6 +23,13 @@ class Sphere: public Object
         double const r;
         Image texture;
         bool texturePresent;
+
+        Vector rotationAxis;
+        double rotationAngle;
+
+        virtual double getRotationAngle();
+        virtual Point getPosition();
+        virtual Vector getRotationAxis();
 };
 
 #endif

@@ -13,6 +13,9 @@ class Quad: public Object
         virtual float *textureCoords(Point hit);
         virtual bool hasTexture();
         virtual Image getTexture();
+        virtual double getRotationAngle();
+        virtual Point getPosition();
+        virtual Vector getRotationAxis();
 
         Point const point1;
         Point const point2;

@@ -39,15 +39,18 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
 
    if (obj->hasTexture()){
         // Texture found
-
-       /* /// rotation formula (Rodrigues)
-        /// we always rotate along the y axis (0,1,0)
+        /// rotation formula (Rodrigues)
+        /// 
         /// transform the hit coordinates to get rotated texture position
-        double rotationAngle = 5;
-        Vector axis = Vector(0,1,0);
+        Vector centerAxis = obj->getPosition();
+        hit = hit.operator-=(centerAxis);
+        double rotationAngle = obj->getRotationAngle();
+        rotationAngle = rotationAngle / 360.00 * (2*3.1412);   //transforming to rads.
+        Vector axis = obj->getRotationAxis();
+        axis = axis.normalized();
         Vector originalHit = hit;
         hit = hit.operator*(cos(rotationAngle)) + (axis.cross(hit)).operator*(sin(rotationAngle)) + (axis.operator*(axis.dot(hit))).operator*(1-cos(rotationAngle));
-*/
+        hit.operator+=(centerAxis);
         // Compute uv-coordinates from hit-point (only non-trivially implemented for sphere currently)
         float *uv = obj->textureCoords(hit);
 
@@ -62,7 +65,7 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
             cerr << "Something went wrong when aplying texture in scene.cpp: " << exc.what() << "\n";
         }
 
-        //hit = originalHit;
+        hit = originalHit;
     }
 
 
@@ -138,7 +141,7 @@ Color Scene::trace(Ray const &ray, unsigned rec_depth = 2) // Max 2 recursive ca
 
     Point above_hit_position = hit + R * 0.01; // Move hit point a bit further in refelctance direction
 
-    color += trace(Ray(above_hit_position, R), rec_depth-1) * material.ks;
+    ///color += trace(Ray(above_hit_position, R), rec_depth-1) * material.ks;
 
     return color;
 }

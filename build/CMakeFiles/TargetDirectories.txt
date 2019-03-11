@@ -1,3 +1,3 @@
-/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/edit_cache.dir
-/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/rebuild_cache.dir
-/home/daniel/Uni/ThirdYear/CG/W5/Repository/RayTracer_2/build/CMakeFiles/ray.dir
+/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/rebuild_cache.dir
+/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/edit_cache.dir
+/Users/balinthompot/RUG/3C/CG/RayTracer_2/build/CMakeFiles/ray.dir

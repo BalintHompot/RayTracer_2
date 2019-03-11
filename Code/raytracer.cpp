@@ -43,15 +43,34 @@ bool Raytracer::parseObjectNode(json const &node)
         Point pos(node["position"]);
         double radius = node["radius"];
 
+        Vector rotationAxis = Vector(0,0,0);
+        double rotationAngle = 0;
         // Read texture if present
+/*         try{
+            rotationAxis = Vector(node["rotation"]);
+            rotationAngle = node["angle"];
+        }catch (const std::exception &exc) {
+            rotationAxis = Vector(0,0,0);
+            rotationAngle = 0;
+            cerr << "no angle or axis found for rotation: " << exc.what() << "\n";
+        } */
+        if (node.find("rotation") != node.end()){
+            rotationAxis = Vector(node["rotation"]);
+        }
+        if (node.find("angle") != node.end()){
+            rotationAngle = node["angle"];
+        }
+
         if (node.find("RelativeImagePath") != node.end()){
             string path = node["RelativeImagePath"];
             std::cout << "Texture stated to be at location: " << path << '\n';
-            obj = ObjectPtr(new Sphere(pos, radius, Image(path)));
+            obj = ObjectPtr(new Sphere(pos, radius, Image(path), rotationAngle, rotationAxis));
         } else {
             // No texture present
-            obj = ObjectPtr(new Sphere(pos, radius));
+            obj = ObjectPtr(new Sphere(pos, radius, rotationAngle, rotationAxis));
         }
+
+
 
     } else if (node["type"] == "triangle")
     {

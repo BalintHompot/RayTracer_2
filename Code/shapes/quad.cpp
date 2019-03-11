@@ -50,6 +50,15 @@ bool Quad::hasTexture(){
 Image Quad::getTexture(){
     return *texture;
 }
+double Quad::getRotationAngle(){
+    return 0.0;
+}
+Point Quad::getPosition(){
+    return Point(0,0,0);
+}
+Vector Quad::getRotationAxis(){
+    return Vector(0,0,0);
+}
 
 Quad::Quad(Point const &p1, Point const &p2,Point const &p3,Point const &p4)
 :

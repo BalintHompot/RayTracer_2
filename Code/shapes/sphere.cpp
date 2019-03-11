@@ -70,18 +70,31 @@ bool Sphere::hasTexture(){
 Image Sphere::getTexture(){
     return texture;
 }
+double Sphere::getRotationAngle(){
+    return rotationAngle;
+}
+Point Sphere::getPosition(){
+    return position;
+}
+Vector Sphere::getRotationAxis(){
+    return rotationAxis;
+}
 
-Sphere::Sphere(Point const &pos, double radius)
+Sphere::Sphere(Point const &pos, double radius, double rotAngle, Vector rotAxis)
 :
     position(pos),
     r(radius),
-    texturePresent(false)
+    texturePresent(false),
+    rotationAngle(rotAngle),
+    rotationAxis(rotAxis)
 {}
 
-Sphere::Sphere(Point const &pos, double radius, Image tex)
+Sphere::Sphere(Point const &pos, double radius, Image tex, double rotAngle, Vector rotAxis)
 :
     position(pos),
     r(radius),
     texture(tex),
-    texturePresent(true)
+    texturePresent(true),
+    rotationAngle(rotAngle),
+    rotationAxis(rotAxis)
 {}
